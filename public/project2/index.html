@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Taimur Hassan" />
+    <meta name="description" content="Describe your website">
+    <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
+    <title>Project 1</title>
+    <meta name="generator" content="Hugo 0.70.0" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,200bold,400old" />
+    
+    <!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+    
+  </head>
+
+  <body>
+    <div id="wrap">
+
+      
+      <nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/"><i class="fa fa-home"></i></a>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="navbar-collapse collapse" id="navbar">
+      <ul class="nav navbar-nav navbar-right">
+      
+        
+        <li><a href="/blog/">BLOG</a></li>
+        
+        <li><a href="/project1/">PROJECT 1</a></li>
+        
+        <li><a href="/project2/">PROJECT 2</a></li>
+        
+        <li><a href="/resume/">RESUME</a></li>
+        
+      
+      </ul>
+    </div>
+  </div>
+</nav>
+
+      
+      <div class="container">
+        <div class="blog-post">
+          <h3>
+            <strong><a href="/project2/">Project 1</a></strong>
+          </h3>
+        </div>
+        <div class="blog-title">
+          <h4>
+          January 1, 0001
+            &nbsp;&nbsp;
+            
+          </h4>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="blogpost">
+              
+
+
+<pre class="r"><code>#Data Sets
+library(nlme)
+library(tidyverse)
+MathAchSchool-&gt; MathAchSchool2
+head(MathAchSchool2)</code></pre>
+<pre><code>##      School Size   Sector PRACAD DISCLIM HIMINTY MEANSES
+## 1224   1224  842   Public   0.35   1.597       0  -0.428
+## 1288   1288 1855   Public   0.27   0.174       0   0.128
+## 1296   1296 1719   Public   0.32  -0.137       1  -0.420
+## 1308   1308  716 Catholic   0.96  -0.622       0   0.534
+## 1317   1317  455 Catholic   0.95  -1.694       1   0.351
+## 1358   1358 1430   Public   0.25   1.535       0  -0.014</code></pre>
+<p>The dataset in question is that of a school demographic data. There are 7 variables. The School variable is a numeric variable used as an ID. Size is another numeric variable giving the number of students in each school. Sector is a categorical variable with two levels: Public and Catholic. PRACAD is a numeric variable givign the percentage of students on the academic track. DISCLIM is another numeric variable measuring the discrimination climate in each school. HIMINTY is a binary variable with values of 0 and 1, where 1 has a school enrollment of 40% minority, while 0 has a school enrollment of less than and equal to 40% minority. MEANSES is a numeric variable giving the mean SES score of the school. The number of observations are 160 in total.</p>
+<pre class="r"><code>#MANOVA
+manmath&lt;-manova(cbind(PRACAD,DISCLIM,Size)~Sector,data=MathAchSchool2)
+summary(manmath)</code></pre>
+<pre><code>##            Df  Pillai approx F num Df den Df    Pr(&gt;F)    
+## Sector      1 0.62749   87.593      3    156 &lt; 2.2e-16 ***
+## Residuals 158                                             
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<pre class="r"><code>summary.aov(manmath)</code></pre>
+<pre><code>##  Response PRACAD :
+##              Df Sum Sq Mean Sq F value    Pr(&gt;F)    
+## Sector        1 4.7073  4.7073  130.38 &lt; 2.2e-16 ***
+## Residuals   158 5.7045  0.0361                      
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+##  Response DISCLIM :
+##              Df Sum Sq Mean Sq F value    Pr(&gt;F)    
+## Sector        1 77.039  77.039  162.89 &lt; 2.2e-16 ***
+## Residuals   158 74.725   0.473                      
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+##  Response Size :
+##              Df   Sum Sq  Mean Sq F value    Pr(&gt;F)    
+## Sector        1 12866002 12866002  40.541 1.998e-09 ***
+## Residuals   158 50142256   317356                      
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<pre class="r"><code>summary(aov(cbind(PRACAD,DISCLIM,Size)~Sector,data=MathAchSchool2))</code></pre>
+<pre><code>##  Response PRACAD :
+##              Df Sum Sq Mean Sq F value    Pr(&gt;F)    
+## Sector        1 4.7073  4.7073  130.38 &lt; 2.2e-16 ***
+## Residuals   158 5.7045  0.0361                      
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+##  Response DISCLIM :
+##              Df Sum Sq Mean Sq F value    Pr(&gt;F)    
+## Sector        1 77.039  77.039  162.89 &lt; 2.2e-16 ***
+## Residuals   158 74.725   0.473                      
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+##  Response Size :
+##              Df   Sum Sq  Mean Sq F value    Pr(&gt;F)    
+## Sector        1 12866002 12866002  40.541 1.998e-09 ***
+## Residuals   158 50142256   317356                      
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<pre class="r"><code>pairwise.t.test(MathAchSchool2$PRACAD,MathAchSchool2$Sector,p.adj=&quot;none&quot;)</code></pre>
+<pre><code>## 
+##  Pairwise comparisons using t tests with pooled SD 
+## 
+## data:  MathAchSchool2$PRACAD and MathAchSchool2$Sector 
+## 
+##          Public
+## Catholic &lt;2e-16
+## 
+## P value adjustment method: none</code></pre>
+<pre class="r"><code>pairwise.t.test(MathAchSchool2$DISCLIM,MathAchSchool2$Sector,p.adj=&quot;none&quot;)</code></pre>
+<pre><code>## 
+##  Pairwise comparisons using t tests with pooled SD 
+## 
+## data:  MathAchSchool2$DISCLIM and MathAchSchool2$Sector 
+## 
+##          Public
+## Catholic &lt;2e-16
+## 
+## P value adjustment method: none</code></pre>
+<pre class="r"><code>pairwise.t.test(MathAchSchool2$Size,MathAchSchool2$Sector,p.adj=&quot;none&quot;)</code></pre>
+<pre><code>## 
+##  Pairwise comparisons using t tests with pooled SD 
+## 
+## data:  MathAchSchool2$Size and MathAchSchool2$Sector 
+## 
+##          Public
+## Catholic 2e-09 
+## 
+## P value adjustment method: none</code></pre>
+<pre class="r"><code>0.05/7 </code></pre>
+<pre><code>## [1] 0.007142857</code></pre>
+<p>The numeric variables, PRACAD, DISCLIM, and Size, do show a mean difference across levels of the categorical variable, Sector. Univariate ANOVAs do show a mean difference across groups for all three numeric variables. All three DISCLIM, PRACAD, and Size differ in Public and Catholic Sector of schools. In totality, 7 tests were done (1 MANOVA, 3 ANOVAs, 3 t-tests). After the bonferroni correctino, the signficance level is adjusted to 0.007142857. Significant differencs were found among the Sectors for at least one of the dependent variables. Univariate ANOVAs for each dependent variable were conducted as follow-up tests to the MANOVA, using the Bonferroni method for controlling Type I error rates. The Univariate ANOVAs for PRACAD, DISCLIM, and Size were all significant, F = 130.38, p &lt; .0001, F = 162.89 p =&lt; .0001, F= 40.541, p&lt;0.001, respectively. Both sectors differed significantly from each other in terms of PRACAD, DISCLIM, and Size after post hoc tests. MANOVA has many assumptions, including multivariate normal distribution, all groups have same variance/covariance, sensitivity to multicollinearity, needing more samples than variables, being highly sensitive to many 0s (outliers). It can be deciphered that most assumptions have been met except that of the data having outliers. It is also to be noted that the data might not have a perfectly normal disribution.</p>
+<pre class="r"><code>#Randomization Test:
+set.seed(348)
+rand_dist&lt;-vector()
+for(i in 1:5000){
+new&lt;-data.frame(DISCLIM=sample(MathAchSchool2$DISCLIM),Sector=MathAchSchool2$Sector) 
+rand_dist[i]&lt;-mean(new[new$Sector==&quot;Catholic&quot;,]$DISCLIM)-
+              mean(new[new$Sector==&quot;Public&quot;,]$DISCLIM)}
+MathAchSchool2%&gt;%group_by(Sector)%&gt;%
+  summarize(means=mean(DISCLIM))%&gt;%summarize(`mean_diff:`=diff(means))</code></pre>
+<pre><code>## # A tibble: 1 x 1
+##   `mean_diff:`
+##          &lt;dbl&gt;
+## 1        -1.40</code></pre>
+<pre class="r"><code>hist(rand_dist)</code></pre>
+<p><img src="/project2_files/figure-html/unnamed-chunk-3-1.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>{hist(rand_dist,main=&quot;&quot;,ylab=&quot;&quot;); abline(v = 1.398762,col=&quot;red&quot;)}</code></pre>
+<p><img src="/project2_files/figure-html/unnamed-chunk-3-2.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>mean(rand_dist&lt; -1.398762 | rand_dist &gt; 1.398762)</code></pre>
+<pre><code>## [1] 0</code></pre>
+<p>Null Hypothesis is that there is no difference in DISCLIM between the Catholic and Public Sectors. Alternative Hypothesis is that there is a difference in DISCLIM between the two sectors. The means of DISCLIM for both sectors are not as extreme as 1.398762. It would be highly unlikely to get a mean difference this big if the outcome data is splitted. The test statistic is too large to fit into the graph of the null distribution.</p>
+<pre class="r"><code>#Regression Model
+install.packages(&#39;lmtest&#39;, repos = &quot;http://cran.us.r-project.org&quot;)</code></pre>
+<pre><code>## 
+## The downloaded binary packages are in
+##  /var/folders/kg/pcq6cp814h7_bfd7x3jbhj8m0000gn/T//Rtmplxiy60/downloaded_packages</code></pre>
+<pre class="r"><code>install.packages(&#39;sandwich&#39;, repos = &quot;http://cran.us.r-project.org&quot;)</code></pre>
+<pre><code>## 
+## The downloaded binary packages are in
+##  /var/folders/kg/pcq6cp814h7_bfd7x3jbhj8m0000gn/T//Rtmplxiy60/downloaded_packages</code></pre>
+<pre class="r"><code>install.packages(&#39;plotly&#39;, repos = &quot;http://cran.us.r-project.org&quot;)</code></pre>
+<pre><code>## 
+## The downloaded binary packages are in
+##  /var/folders/kg/pcq6cp814h7_bfd7x3jbhj8m0000gn/T//Rtmplxiy60/downloaded_packages</code></pre>
+<pre class="r"><code>library(lmtest)
+library(MASS)
+library(sandwich)
+library(tidyverse)
+library(dplyr)
+library(plotly)
+MathAchSchool2$PRACAD_c &lt;- MathAchSchool2$PRACAD - mean(MathAchSchool2$PRACAD)
+MathAchSchool2$DISCLIM_c &lt;- MathAchSchool2$DISCLIM - mean(MathAchSchool2$DISCLIM)
+fit&lt;-lm(PRACAD_c ~ DISCLIM_c*Sector, data=MathAchSchool2)
+summary(fit)</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = PRACAD_c ~ DISCLIM_c * Sector, data = MathAchSchool2)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -0.52875 -0.11841  0.01571  0.11471  0.46947 
+## 
+## Coefficients:
+##                          Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)              -0.12999    0.02475  -5.253 4.85e-07 ***
+## DISCLIM_c                -0.03478    0.02566  -1.355   0.1773    
+## SectorCatholic            0.21177    0.04368   4.848 2.99e-06 ***
+## DISCLIM_c:SectorCatholic -0.10848    0.04462  -2.431   0.0162 *  
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.1815 on 156 degrees of freedom
+## Multiple R-squared:  0.5066, Adjusted R-squared:  0.4971 
+## F-statistic:  53.4 on 3 and 156 DF,  p-value: &lt; 2.2e-16</code></pre>
+<pre class="r"><code>library(ggplot2)
+MathAchSchool2%&gt;%ggplot(aes(x = DISCLIM, y = PRACAD, color = Sector)) +
+stat_smooth(method = &quot;lm&quot;, se = FALSE, fullrange = TRUE)</code></pre>
+<p><img src="/project2_files/figure-html/unnamed-chunk-4-1.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>resids&lt;-fit$residuals
+fitvals&lt;-fit$fitted.values
+ggplot()+geom_point(aes(fitvals,resids))+geom_hline(yintercept=0, color=&#39;red&#39;)</code></pre>
+<p><img src="/project2_files/figure-html/unnamed-chunk-4-2.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>ks.test(resids, &quot;pnorm&quot;, mean=0, sd(resids))</code></pre>
+<pre><code>## 
+##  One-sample Kolmogorov-Smirnov test
+## 
+## data:  resids
+## D = 0.041517, p-value = 0.9455
+## alternative hypothesis: two-sided</code></pre>
+<pre class="r"><code>bptest(fit)</code></pre>
+<pre><code>## 
+##  studentized Breusch-Pagan test
+## 
+## data:  fit
+## BP = 4.1557, df = 3, p-value = 0.2451</code></pre>
+<pre class="r"><code>coeftest(fit, vcov = vcovHC(fit))</code></pre>
+<pre><code>## 
+## t test of coefficients:
+## 
+##                           Estimate Std. Error t value  Pr(&gt;|t|)    
+## (Intercept)              -0.129989   0.021858 -5.9471 1.730e-08 ***
+## DISCLIM_c                -0.034777   0.025309 -1.3741   0.17138    
+## SectorCatholic            0.211766   0.050355  4.2055 4.378e-05 ***
+## DISCLIM_c:SectorCatholic -0.108478   0.053866 -2.0139   0.04574 *  
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<p>Controlling for Sector, there is not a significant effect of DISCLIM_c on PRACAD_C. For every one unit increase in DISCLIM_c, PRACAD_c decreases by 0.035. However, after controlling for DISCLIM_c, there is a difference in PRACAD between Catholic and Public Schools. For every one unit increase in Sector, PRACAD_c increases by 0.21. (t for DISCLIM_c = -1.3741, df = 153, p &gt; .001, t for Sector = 4.2055, p &lt;0.01)</p>
+<p>The data obtained is linear. The Kolmogorov-Smirnov test shows that the data is normal. The Breusch-Pagan test shows that the data is homoskedastic as the Breusch-Pagan test shows. After regression with robust standard errors, controlling for Sector, there is not a significant effect of DISCLIM_c on PRACAD_C. For every one unit increase in DISCLIM_c, PRACAD_c decreases by 0.035. However, after controlling for DISCLIM_c, there is a difference in PRACAD between Catholic and Public Schools. There were no changes before/after the application of robust SEs.</p>
+<p>50.66% of the variation is explained by the model (all predictors at once). 49.71% of the variation in the outcome is explained by the model but with penalty for each extra explanatory variable (adjusted R squared).</p>
+<pre class="r"><code>#Bootstrapping
+boot_dat&lt;- sample_frac(MathAchSchool2, replace=T)
+#repeat 5000 times
+samp_distn&lt;-replicate(5000, {
+boot_dat &lt;- sample_frac(MathAchSchool2, replace=T) 
+fit&lt;-lm(PRACAD_c ~ DISCLIM_c*Sector, data=boot_dat)
+coef(fit)
+})
+samp_distn %&gt;% t %&gt;% as.data.frame %&gt;% summarize_all(sd)</code></pre>
+<pre><code>##   (Intercept)  DISCLIM_c SectorCatholic DISCLIM_c:SectorCatholic
+## 1  0.02148819 0.02476245     0.04650216               0.05027531</code></pre>
+<p>There are no significant changes in any SEs in the bootstrapped model compared to the original or robust model. In fact, the bootstrapped standard errors are more similar to the robust standard error (the intercept is almost the same, and DISCLIM_c, Sector and the interaction has similar standard error in both). In essence, there standard errors are to be very similar so as to not change the p-value much (p-values almost remain the same).</p>
+<pre class="r"><code>#Logistic Regression
+fitl&lt;-glm(HIMINTY~DISCLIM+MEANSES, data=MathAchSchool2, family=&quot;binomial&quot;)
+coeftest(fitl)</code></pre>
+<pre><code>## 
+## z test of coefficients:
+## 
+##             Estimate Std. Error z value  Pr(&gt;|z|)    
+## (Intercept) -1.17480    0.20902 -5.6207 1.902e-08 ***
+## DISCLIM     -0.28393    0.21434 -1.3247    0.1853    
+## MEANSES     -2.71127    0.56506 -4.7982 1.601e-06 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<pre class="r"><code>exp(coef(fitl))</code></pre>
+<pre><code>## (Intercept)     DISCLIM     MEANSES 
+##  0.30887995  0.75281620  0.06645203</code></pre>
+<pre class="r"><code>prob&lt;-predict(fitl,type=&quot;response&quot;)
+pred&lt;-ifelse(prob&gt;.5,1,0)
+table(prediction=pred, truth=MathAchSchool2$HIMINTY)%&gt;%addmargins</code></pre>
+<pre><code>##           truth
+## prediction   0   1 Sum
+##        0   112  27 139
+##        1     4  17  21
+##        Sum 116  44 160</code></pre>
+<pre class="r"><code>(112+17)/160 #Accuracy</code></pre>
+<pre><code>## [1] 0.80625</code></pre>
+<pre class="r"><code>17/44 #TPR</code></pre>
+<pre><code>## [1] 0.3863636</code></pre>
+<pre class="r"><code>112/116 #TNR</code></pre>
+<pre><code>## [1] 0.9655172</code></pre>
+<pre class="r"><code>17/21 #PPV</code></pre>
+<pre><code>## [1] 0.8095238</code></pre>
+<pre class="r"><code>probs&lt;-predict(fitl,type=&quot;response&quot;)
+MathAchSchool2$logit&lt;-predict(fitl,type=&quot;link&quot;) #get log-odds for everyone
+## Density plot of log-odds for each outcome:
+MathAchSchool2%&gt;%ggplot()+geom_density(aes(logit,color=HIMINTY,fill=HIMINTY), alpha=.4)+
+  theme(legend.position=c(.85,.85))+geom_vline(xintercept=0)+xlab(&quot;logit (log-odds)&quot;)+
+  geom_rug(aes(logit,color=HIMINTY))+
+  geom_text(x=-5,y=.07,label=&quot;TN = 112&quot;)+
+  geom_text(x=-1.75,y=.008,label=&quot;FN = 27&quot;)+
+  geom_text(x=1,y=.006,label=&quot;FP = 4&quot;)+
+  geom_text(x=5,y=.04,label=&quot;TP = 17&quot;)</code></pre>
+<p><img src="/project2_files/figure-html/unnamed-chunk-6-1.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>install.packages(&#39;plotROC&#39;, repos = &quot;http://cran.us.r-project.org&quot;)</code></pre>
+<pre><code>## 
+## The downloaded binary packages are in
+##  /var/folders/kg/pcq6cp814h7_bfd7x3jbhj8m0000gn/T//Rtmplxiy60/downloaded_packages</code></pre>
+<pre class="r"><code>library(plotROC) 
+ROCplot&lt;-ggplot(MathAchSchool2)+geom_roc(aes(d=HIMINTY,m=prob), n.cuts=0)+
+geom_segment(aes(x=0,xend=1,y=0,yend=1),lty=2)
+ROCplot</code></pre>
+<p><img src="/project2_files/figure-html/unnamed-chunk-6-2.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>calc_auc(ROCplot)</code></pre>
+<pre><code>##   PANEL group AUC
+## 1     1     1  NA
+## 2     1     2  NA</code></pre>
+<pre class="r"><code>class_diag&lt;-function(probs,truth){
+  
+  tab&lt;-table(factor(probs&gt;.5,levels=c(&quot;FALSE&quot;,&quot;TRUE&quot;)),truth)
+  acc=sum(diag(tab))/sum(tab)
+  sens=tab[2,2]/colSums(tab)[2]
+  spec=tab[1,1]/colSums(tab)[1]
+  ppv=tab[2,2]/rowSums(tab)[2]
+
+  if(is.numeric(truth)==FALSE &amp; is.logical(truth)==FALSE) truth&lt;-as.numeric(truth)-1
+  
+  #CALCULATE EXACT AUC
+  ord&lt;-order(probs, decreasing=TRUE)
+  probs &lt;- probs[ord]; truth &lt;- truth[ord]
+  
+  TPR=cumsum(truth)/max(1,sum(truth)) 
+  FPR=cumsum(!truth)/max(1,sum(!truth))
+  
+  dup&lt;-c(probs[-1]&gt;=probs[-length(probs)], FALSE)
+  TPR&lt;-c(0,TPR[!dup],1); FPR&lt;-c(0,FPR[!dup],1)
+  
+  n &lt;- length(TPR)
+  auc&lt;- sum( ((TPR[-1]+TPR[-n])/2) * (FPR[-1]-FPR[-n]) )
+
+  data.frame(acc,sens,spec,ppv,auc)
+}
+
+MathAchSchool2$HIMINTY = as.factor(MathAchSchool2$HIMINTY)
+
+set.seed(1234)
+k=10 
+
+data&lt;-MathAchSchool2[sample(nrow(MathAchSchool2)),] 
+folds&lt;-cut(seq(1:nrow(MathAchSchool2)),breaks=k,labels=F) 
+diags&lt;-NULL
+for(i in 1:k){
+
+  train&lt;-data[folds!=i,] 
+  test&lt;-data[folds==i,]
+  truth&lt;-test$HIMINTY
+
+ fit&lt;-glm(HIMINTY~DISCLIM+MEANSES, data=train, family=&quot;binomial&quot;)
+  probs&lt;-predict(fit,newdata = test,type=&quot;response&quot;)
+  
+
+  diags&lt;-rbind(diags,class_diag(probs,truth))
+}
+
+
+summarize_all(diags,mean) </code></pre>
+<pre><code>##       acc      sens      spec ppv       auc
+## 1 0.79375 0.3566667 0.9648834 NaN 0.7235785</code></pre>
+<p>Cotrolling for MEANSES, there is not a significant effect of DISCLIM on HIMINTY. For every one unit increase in DISCLIM, the odds of HIMINTY change by a factor of 0.7528. Controlling for DISCLIM, there is a significant effect of MEANSES on HIMINTY. For every one unit increase in MEANSES, the odds of HIMINTY change by a factor of 0.066. The Recall is 0.8095.</p>
+<p>The Accuracy is 0.806 which is good. Sensitivity and Specificity are 0.386 and 0.966. Sensitivity is somewhat low.</p>
+<p>The ROC curve is not bad but could have been better. The AUC is 0.744 which lies in the category of being fair.</p>
+<p>After 10-fold CV, the Accuracy is 0.806. Sensitivity is 0.424, and Recall is 0.8333.</p>
+<pre class="r"><code>#Lasso Regression
+install.packages(&#39;glmnet&#39;, repos = &quot;http://cran.us.r-project.org&quot;)</code></pre>
+<pre><code>## 
+## The downloaded binary packages are in
+##  /var/folders/kg/pcq6cp814h7_bfd7x3jbhj8m0000gn/T//Rtmplxiy60/downloaded_packages</code></pre>
+<pre class="r"><code>library(glmnet)
+MathAchSchool2$HIMINTY = as.numeric(MathAchSchool2$HIMINTY) 
+y&lt;-as.matrix(MathAchSchool2$HIMINTY)
+x&lt;-model.matrix(HIMINTY~Size+Sector+PRACAD+DISCLIM+MEANSES,data=MathAchSchool2)[,-1]  
+head(x)</code></pre>
+<pre><code>##      Size SectorCatholic PRACAD DISCLIM MEANSES
+## 1224  842              0   0.35   1.597  -0.428
+## 1288 1855              0   0.27   0.174   0.128
+## 1296 1719              0   0.32  -0.137  -0.420
+## 1308  716              1   0.96  -0.622   0.534
+## 1317  455              1   0.95  -1.694   0.351
+## 1358 1430              0   0.25   1.535  -0.014</code></pre>
+<pre class="r"><code>#cannot include the variable school as it is an ID
+
+cv &lt;- cv.glmnet(x,y) 
+
+{plot(cv$glmnet.fit, &quot;lambda&quot;, label=TRUE); abline(v = log(cv$lambda.1se)); abline(v = log(cv$lambda.min),lty=2)}</code></pre>
+<p><img src="/project2_files/figure-html/unnamed-chunk-7-1.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>cv&lt;-cv.glmnet(x,y,family=&quot;binomial&quot;)
+lasso&lt;-glmnet(x,y,family=&quot;binomial&quot;,lambda=cv$lambda.1se)
+coef(lasso)</code></pre>
+<pre><code>## 6 x 1 sparse Matrix of class &quot;dgCMatrix&quot;
+##                       s0
+## (Intercept)    -1.010985
+## Size            .       
+## SectorCatholic  .       
+## PRACAD          .       
+## DISCLIM         .       
+## MEANSES        -1.063342</code></pre>
+<pre class="r"><code>set.seed(1234)
+k=10 
+MathAchSchool2$HIMINTY = factor(MathAchSchool2$HIMINTY) 
+
+data&lt;-MathAchSchool2[sample(nrow(MathAchSchool2)),] 
+folds&lt;-cut(seq(1:nrow(MathAchSchool2)),breaks=k,labels=F) 
+
+diags&lt;-NULL
+for(i in 1:k){
+
+  train&lt;-data[folds!=i,] 
+  test&lt;-data[folds==i,]
+  truth&lt;-test$HIMINTY
+  
+
+ fit&lt;-glm(HIMINTY~MEANSES, data=train, family=&quot;binomial&quot;)
+  probs&lt;-predict(fit,newdata = test,type=&quot;response&quot;)
+  
+
+  diags&lt;-rbind(diags,class_diag(probs,truth))
+}
+
+
+summarize_all(diags,mean)</code></pre>
+<pre><code>##       acc      sens      spec       ppv       auc
+## 1 0.80625 0.4233333 0.9557925 0.7833333 0.7214552</code></pre>
+<p>MEANSES variable is retained after lasso regression as it gives a numeric value.</p>
+<p>Compared to the Logistic Regression done previously , surprisingly, the accuracy gets lower by approximately 0.01. Everything gets very slightly lower except the AUC which gets slightly higher. Overall, there is very little change.</p>
+
+              <hr>
+              <div class="related-posts">
+                <h5>Related Posts</h5>
+                
+              </div>
+            </div>
+          </div>
+          <hr>
+        <div class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+
+    (function() {
+      
+      
+      if (window.location.hostname == "localhost")
+        return;
+
+      var disqus_shortname = '';
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+        </div>
+      </div>
+      
+    </div>
+
+    
+    <footer>
+  <div id="footer">
+    <div class="container">
+      <p class="text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io/">Hugo</a> and
+      <a href="http://www.github.com/nurlansu/hugo-sustain/">sustain</a> with ♥</p>
+    </div>
+  </div>
+</footer>
+<div class="footer"></div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="/js/docs.min.js"></script>
+<script src="/js/main.js"></script>
+
+<script src="/js/ie10-viewport-bug-workaround.js"></script>
+
+
+    
+  </body>
+</html>

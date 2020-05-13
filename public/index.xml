@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Chris Turner</title>
+    <link>/</link>
+    <description>Recent content on Chris Turner</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sun, 02 Oct 2016 22:55:05 -0400</lastBuildDate>
+    
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>New post</title>
+      <link>/blog/new-post/</link>
+      <pubDate>Wed, 13 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/new-post/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Projects</title>
+      <link>/projects/</link>
+      <pubDate>Sun, 02 Oct 2016 22:55:05 -0400</pubDate>
+      
+      <guid>/projects/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Project 1</title>
+      <link>/project1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/project1/</guid>
+      <description>INTRODUCTION  The two datasets chosen are MathAchieve and MathAchSchool. Both relate Achievement Scores in Mathematics to different variables which have been the focus of study for many articles in the modern world. MathAchieve contains the School number, status of being a Minority, Sex of the individual, Socioeconomic Status (SES), a numeric vector of mathematics achievement score (MathAch), and a numeric vector of the mean SES for the entire school.</description>
+    </item>
+    
+    <item>
+      <title>Project 1</title>
+      <link>/project2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/project2/</guid>
+      <description>#Data Sets library(nlme) library(tidyverse) MathAchSchool-&amp;gt; MathAchSchool2 head(MathAchSchool2) ## School Size Sector PRACAD DISCLIM HIMINTY MEANSES ## 1224 1224 842 Public 0.35 1.597 0 -0.428 ## 1288 1288 1855 Public 0.27 0.174 0 0.128 ## 1296 1296 1719 Public 0.32 -0.137 1 -0.420 ## 1308 1308 716 Catholic 0.96 -0.622 0 0.534 ## 1317 1317 455 Catholic 0.95 -1.694 1 0.351 ## 1358 1358 1430 Public 0.25 1.535 0 -0.014 The dataset in question is that of a school demographic data.</description>
+    </item>
+    
+  </channel>
+</rss>

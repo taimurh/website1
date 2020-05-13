@@ -1,0 +1,7 @@
+{{ partial "head" . }}
+  <body>
+    <div id="wrap">
+   
+    {{ partial "footer" . }}
+  </body>
+</html>

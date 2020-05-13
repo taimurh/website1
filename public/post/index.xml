@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Chris Turner</title>
+    <link>/post/</link>
+    <description>Recent content in Posts on Chris Turner</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Wed, 13 May 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Lklmklm</title>
+      <link>/2020/05/13/lklmklm/</link>
+      <pubDate>Wed, 13 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/05/13/lklmklm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Taimurhh</title>
+      <link>/2020/05/13/taimurhh/</link>
+      <pubDate>Wed, 13 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/05/13/taimurhh/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
