@@ -12,21 +12,13 @@
     
     
     <item>
-      <title>Python</title>
+      <title>Python Work</title>
       <link>/blog/python/</link>
       <pubDate>Thu, 14 May 2020 00:00:00 +0000</pubDate>
       
       <guid>/blog/python/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>New post</title>
-      <link>/blog/new-post/</link>
-      <pubDate>Wed, 13 May 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/blog/new-post/</guid>
-      <description></description>
+      <description>In bioinformatics, k-mers refer to all the possible subsequences (of length k) from a read obtained through DNA sequencing. For example, if the DNA sequencing read is “ATCATCATG”, then a the 3-mers in that read include “ATC” (which occurs twice), “TCA” (which occurs twice), “CAT” (occurs twice), and “ATG” (occurs once). You can read more about k-mers on Wikipedia.
+Write a function that takes a string of nucleotides as input and returns a dictionary with all 3-mers present in that string, and the number of times that each 3-mer occurs.</description>
     </item>
     
     <item>
