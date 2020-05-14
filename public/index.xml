@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Chris Turner</title>
+    <title>Taimur Hassan</title>
     <link>/</link>
-    <description>Recent content on Chris Turner</description>
+    <description>Recent content on Taimur Hassan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <lastBuildDate>Sun, 02 Oct 2016 22:55:05 -0400</lastBuildDate>
@@ -45,6 +45,18 @@
       
       <guid>/project2/</guid>
       <description>#Data Sets library(nlme) library(tidyverse) MathAchSchool-&amp;gt; MathAchSchool2 head(MathAchSchool2) ## School Size Sector PRACAD DISCLIM HIMINTY MEANSES ## 1224 1224 842 Public 0.35 1.597 0 -0.428 ## 1288 1288 1855 Public 0.27 0.174 0 0.128 ## 1296 1296 1719 Public 0.32 -0.137 1 -0.420 ## 1308 1308 716 Catholic 0.96 -0.622 0 0.534 ## 1317 1317 455 Catholic 0.95 -1.694 1 0.351 ## 1358 1358 1430 Public 0.25 1.535 0 -0.014 The dataset in question is that of a school demographic data.</description>
+    </item>
+    
+    <item>
+      <title>Resume</title>
+      <link>/resume/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resume/</guid>
+      <description>EDUCATION
+• 2013 Completed University of Cambridge, GCE Ordinary Levels, with 7 A*’s and 3 A’s (High School)
+• 2015 Completed University of Cambridge, GCE Advanced Levels, with 4 A*’s and 1 B (High School)
+• 2017- Enrolled in the University of Texas at Austin, Austin, TX – Bachelor of Science in Biology (Pre-Med) Anticipated Graduation Date: Spring 2020 Concentration in Biology; Cumulative GPA = 3.86 (as of current)</description>
     </item>
     
   </channel>
