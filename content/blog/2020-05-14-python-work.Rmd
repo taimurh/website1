@@ -7,6 +7,7 @@ categories: []
 tags: []
 description: ''
 ---
+![](python.png)
 
 In bioinformatics, k-mers refer to all the possible subsequences (of length k) from a read obtained through DNA sequencing. For example, if the DNA sequencing read is "ATCATCATG", then a the 3-mers in that read include "ATC" (which occurs twice), "TCA" (which occurs twice), "CAT" (occurs twice), and "ATG" (occurs once). You can read more about k-mers on Wikipedia.
 
