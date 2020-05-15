@@ -32,15 +32,10 @@ theme = "hugo-sustain"
   identifier = "blog"
   url = "/blog/"
 [[menu.main]]
-  name = "Project 1"
-  identifier = "project 1"
+  name = "Projects"
+  identifier = "projects"
   weight = 200
-  url = "/project1/"
-[[menu.main]]
-  name = "Project 2"
-  identifier = "project 2"
-  weight = 200
-  url = "/project2/"
+  url = "/Projects/"
 [[menu.main]]
   name = "Resume"
   identifier = "resume"
