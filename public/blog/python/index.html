@@ -74,10 +74,6 @@
               
 
 
-<div class="figure">
-<img src="python.png" />
-
-</div>
 <p>In bioinformatics, k-mers refer to all the possible subsequences (of length k) from a read obtained through DNA sequencing. For example, if the DNA sequencing read is “ATCATCATG”, then a the 3-mers in that read include “ATC” (which occurs twice), “TCA” (which occurs twice), “CAT” (occurs twice), and “ATG” (occurs once). You can read more about k-mers on Wikipedia.</p>
 <p>Write a function that takes a string of nucleotides as input and returns a dictionary with all 3-mers present in that string, and the number of times that each 3-mer occurs. Then use your function to find the 3-mers in the DNA sequence my_seq1 and my_seq2 defined below.</p>
 <p>The output of your function should be a dictionary that is structured like this (although it will have several more entries)</p>
@@ -87,6 +83,10 @@
 <p>my_seq1 = “ATCATCATG” my_seq2 = “CAGCCCAATCAGGCTCTACTGCCACTAAACTTACGCAGGATATATTTACGCCGACGTACT”</p>
 <p>def hw11(seq): out_dict={} for i in range(len(seq) - 2): if seq[i:i+3] in out_dict: out_dict[seq[i:i+3]] +=1 else: out_dict[seq[i:i+3]]=1 return out_dict print(hw11(my_seq1))</p>
 <p>def hw12(seq): out_dict={} for i in range(len(seq) - 2): if seq[i:i+3] in out_dict: out_dict[seq[i:i+3]] +=1 else: out_dict[seq[i:i+3]]=1 return out_dict print(hw12(my_seq2))</p>
+<div class="figure">
+<img src="python.png" />
+
+</div>
 <p>OUTPUT:</p>
 <p>{‘ATC’: 2, ‘TCA’: 2, ‘CAT’: 2, ‘ATG’: 1} {‘CAG’: 3, ‘AGC’: 1, ‘GCC’: 3, ‘CCC’: 1, ‘CCA’: 2, ‘CAA’: 1, ‘AAT’: 1, ‘ATC’: 1, ‘TCA’: 1, ‘AGG’: 2, ‘GGC’: 1, ‘GCT’: 1, ‘CTC’: 1, ‘TCT’: 1, ‘CTA’: 2, ‘TAC’: 4, ‘ACT’: 4, ‘CTG’: 1, ‘TGC’: 1, ‘CAC’: 1, ‘TAA’: 1, ‘AAA’: 1, ‘AAC’: 1, ‘CTT’: 1, ‘TTA’: 2, ‘ACG’: 3, ‘CGC’: 2, ‘GCA’: 1, ‘GGA’: 1, ‘GAT’: 1, ‘ATA’: 2, ‘TAT’: 2, ‘ATT’: 1, ‘TTT’: 1, ‘CCG’: 1, ‘CGA’: 1, ‘GAC’: 1, ‘CGT’: 1, ‘GTA’: 1}</p>
 
