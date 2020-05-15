@@ -7,6 +7,7 @@ categories: []
 tags: []
 description: ''
 ---
+
 [](/blog/2020-05-14-python-work_files/python.png)
 
 In bioinformatics, k-mers refer to all the possible subsequences (of length k) from a read obtained through DNA sequencing. For example, if the DNA sequencing read is "ATCATCATG", then a the 3-mers in that read include "ATC" (which occurs twice), "TCA" (which occurs twice), "CAT" (occurs twice), and "ATG" (occurs once). You can read more about k-mers on Wikipedia.
@@ -23,7 +24,12 @@ where each key is a 3-mer itself (e.g., "ATC") and each value is the number of t
 
 
 CODE:
+```{r}
+library(reticulate)
+use_virtualenv("r-reticulate")
+```
 
+```{python}
 my_seq1 = "ATCATCATG"
 my_seq2 = "CAGCCCAATCAGGCTCTACTGCCACTAAACTTACGCAGGATATATTTACGCCGACGTACT"
 
@@ -48,7 +54,18 @@ def hw12(seq):
 print(hw12(my_seq2))
 
 
-OUTPUT:
+Plist= [11,22,33,44,55,66]
 
-{'ATC': 2, 'TCA': 2, 'CAT': 2, 'ATG': 1}
-{'CAG': 3, 'AGC': 1, 'GCC': 3, 'CCC': 1, 'CCA': 2, 'CAA': 1, 'AAT': 1, 'ATC': 1, 'TCA': 1, 'AGG': 2, 'GGC': 1, 'GCT': 1, 'CTC': 1, 'TCT': 1, 'CTA': 2, 'TAC': 4, 'ACT': 4, 'CTG': 1, 'TGC': 1, 'CAC': 1, 'TAA': 1, 'AAA': 1, 'AAC': 1, 'CTT': 1, 'TTA': 2, 'ACG': 3, 'CGC': 2, 'GCA': 1, 'GGA': 1, 'GAT': 1, 'ATA': 2, 'TAT': 2, 'ATT': 1, 'TTT': 1, 'CCG': 1, 'CGA': 1, 'GAC': 1, 'CGT': 1, 'GTA': 1}
+print(Plist)
+
+
+def Psq_fun (x):
+  value= x*x 
+  return(value)
+  
+print(Psq_fun(9))
+
+
+```
+
+

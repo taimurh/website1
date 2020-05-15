@@ -17,8 +17,41 @@ description: ''
 <p>{“CAG”: 2, “AGC”: 1, “GCC”: 3}</p>
 <p>where each key is a 3-mer itself (e.g., “ATC”) and each value is the number of times that 3-mer occurs.</p>
 <p>CODE:</p>
-<p>my_seq1 = “ATCATCATG” my_seq2 = “CAGCCCAATCAGGCTCTACTGCCACTAAACTTACGCAGGATATATTTACGCCGACGTACT”</p>
-<p>def hw11(seq): out_dict={} for i in range(len(seq) - 2): if seq[i:i+3] in out_dict: out_dict[seq[i:i+3]] +=1 else: out_dict[seq[i:i+3]]=1 return out_dict print(hw11(my_seq1))</p>
-<p>def hw12(seq): out_dict={} for i in range(len(seq) - 2): if seq[i:i+3] in out_dict: out_dict[seq[i:i+3]] +=1 else: out_dict[seq[i:i+3]]=1 return out_dict print(hw12(my_seq2))</p>
-<p>OUTPUT:</p>
-<p>{‘ATC’: 2, ‘TCA’: 2, ‘CAT’: 2, ‘ATG’: 1} {‘CAG’: 3, ‘AGC’: 1, ‘GCC’: 3, ‘CCC’: 1, ‘CCA’: 2, ‘CAA’: 1, ‘AAT’: 1, ‘ATC’: 1, ‘TCA’: 1, ‘AGG’: 2, ‘GGC’: 1, ‘GCT’: 1, ‘CTC’: 1, ‘TCT’: 1, ‘CTA’: 2, ‘TAC’: 4, ‘ACT’: 4, ‘CTG’: 1, ‘TGC’: 1, ‘CAC’: 1, ‘TAA’: 1, ‘AAA’: 1, ‘AAC’: 1, ‘CTT’: 1, ‘TTA’: 2, ‘ACG’: 3, ‘CGC’: 2, ‘GCA’: 1, ‘GGA’: 1, ‘GAT’: 1, ‘ATA’: 2, ‘TAT’: 2, ‘ATT’: 1, ‘TTT’: 1, ‘CCG’: 1, ‘CGA’: 1, ‘GAC’: 1, ‘CGT’: 1, ‘GTA’: 1}</p>
+<pre class="r"><code>library(reticulate)
+use_virtualenv(&quot;r-reticulate&quot;)</code></pre>
+<pre class="python"><code>my_seq1 = &quot;ATCATCATG&quot;
+my_seq2 = &quot;CAGCCCAATCAGGCTCTACTGCCACTAAACTTACGCAGGATATATTTACGCCGACGTACT&quot;
+
+def hw11(seq):
+    out_dict={}
+    for i in range(len(seq) - 2):
+        if seq[i:i+3] in out_dict:
+            out_dict[seq[i:i+3]] +=1
+        else:
+            out_dict[seq[i:i+3]]=1
+    return out_dict
+print(hw11(my_seq1))</code></pre>
+<pre><code>## {&#39;ATC&#39;: 2, &#39;TCA&#39;: 2, &#39;CAT&#39;: 2, &#39;ATG&#39;: 1}</code></pre>
+<pre class="python"><code>def hw12(seq):
+    out_dict={}
+    for i in range(len(seq) - 2):
+        if seq[i:i+3] in out_dict:
+            out_dict[seq[i:i+3]] +=1
+        else:
+            out_dict[seq[i:i+3]]=1
+    return out_dict
+print(hw12(my_seq2))
+</code></pre>
+<pre><code>## {&#39;CAG&#39;: 3, &#39;AGC&#39;: 1, &#39;GCC&#39;: 3, &#39;CCC&#39;: 1, &#39;CCA&#39;: 2, &#39;CAA&#39;: 1, &#39;AAT&#39;: 1, &#39;ATC&#39;: 1, &#39;TCA&#39;: 1, &#39;AGG&#39;: 2, &#39;GGC&#39;: 1, &#39;GCT&#39;: 1, &#39;CTC&#39;: 1, &#39;TCT&#39;: 1, &#39;CTA&#39;: 2, &#39;TAC&#39;: 4, &#39;ACT&#39;: 4, &#39;CTG&#39;: 1, &#39;TGC&#39;: 1, &#39;CAC&#39;: 1, &#39;TAA&#39;: 1, &#39;AAA&#39;: 1, &#39;AAC&#39;: 1, &#39;CTT&#39;: 1, &#39;TTA&#39;: 2, &#39;ACG&#39;: 3, &#39;CGC&#39;: 2, &#39;GCA&#39;: 1, &#39;GGA&#39;: 1, &#39;GAT&#39;: 1, &#39;ATA&#39;: 2, &#39;TAT&#39;: 2, &#39;ATT&#39;: 1, &#39;TTT&#39;: 1, &#39;CCG&#39;: 1, &#39;CGA&#39;: 1, &#39;GAC&#39;: 1, &#39;CGT&#39;: 1, &#39;GTA&#39;: 1}</code></pre>
+<pre class="python"><code>Plist= [11,22,33,44,55,66]
+
+print(Plist)
+</code></pre>
+<pre><code>## [11, 22, 33, 44, 55, 66]</code></pre>
+<pre class="python"><code>def Psq_fun (x):
+  value= x*x 
+  return(value)
+  
+print(Psq_fun(9))
+</code></pre>
+<pre><code>## 81</code></pre>
