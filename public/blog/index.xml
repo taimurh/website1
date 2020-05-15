@@ -17,7 +17,7 @@
       <pubDate>Thu, 14 May 2020 00:00:00 +0000</pubDate>
       
       <guid>/blog/image-of-my-favorite-musical-instrument/</guid>
-      <description>  </description>
+      <description> </description>
     </item>
     
     <item>
@@ -28,17 +28,6 @@
       <guid>/blog/python/</guid>
       <description>In bioinformatics, k-mers refer to all the possible subsequences (of length k) from a read obtained through DNA sequencing. For example, if the DNA sequencing read is “ATCATCATG”, then a the 3-mers in that read include “ATC” (which occurs twice), “TCA” (which occurs twice), “CAT” (occurs twice), and “ATG” (occurs once). You can read more about k-mers on Wikipedia.
 Write a function that takes a string of nucleotides as input and returns a dictionary with all 3-mers present in that string, and the number of times that each 3-mer occurs.</description>
-    </item>
-    
-    <item>
-      <title>Hello R Markdown</title>
-      <link>/blog/2015-07-23-r-rmarkdown/</link>
-      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
-      
-      <guid>/blog/2015-07-23-r-rmarkdown/</guid>
-      <description>R Markdown This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
-You can embed an R code chunk like this:
-summary(cars) ## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.</description>
     </item>
     
   </channel>
