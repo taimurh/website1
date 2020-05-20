@@ -7,7 +7,7 @@
     <meta name="author" content="Taimur Hassan" />
     <meta name="description" content="Describe your website">
     <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
-    <title>Project 1</title>
+    <title>Project 2</title>
     <meta name="generator" content="Hugo 0.70.0" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="/css/main.css" />
@@ -56,7 +56,7 @@
       <div class="container">
         <div class="blog-post">
           <h3>
-            <strong><a href="/project2/">Project 1</a></strong>
+            <strong><a href="/project2/">Project 2</a></strong>
           </h3>
         </div>
         <div class="blog-title">
@@ -192,15 +192,15 @@ MathAchSchool2%&gt;%group_by(Sector)%&gt;%
 install.packages(&#39;lmtest&#39;, repos = &quot;http://cran.us.r-project.org&quot;)</code></pre>
 <pre><code>## 
 ## The downloaded binary packages are in
-##  /var/folders/kg/pcq6cp814h7_bfd7x3jbhj8m0000gn/T//Rtmplxiy60/downloaded_packages</code></pre>
+##  /var/folders/kg/pcq6cp814h7_bfd7x3jbhj8m0000gn/T//RtmpZPPHdq/downloaded_packages</code></pre>
 <pre class="r"><code>install.packages(&#39;sandwich&#39;, repos = &quot;http://cran.us.r-project.org&quot;)</code></pre>
 <pre><code>## 
 ## The downloaded binary packages are in
-##  /var/folders/kg/pcq6cp814h7_bfd7x3jbhj8m0000gn/T//Rtmplxiy60/downloaded_packages</code></pre>
+##  /var/folders/kg/pcq6cp814h7_bfd7x3jbhj8m0000gn/T//RtmpZPPHdq/downloaded_packages</code></pre>
 <pre class="r"><code>install.packages(&#39;plotly&#39;, repos = &quot;http://cran.us.r-project.org&quot;)</code></pre>
 <pre><code>## 
 ## The downloaded binary packages are in
-##  /var/folders/kg/pcq6cp814h7_bfd7x3jbhj8m0000gn/T//Rtmplxiy60/downloaded_packages</code></pre>
+##  /var/folders/kg/pcq6cp814h7_bfd7x3jbhj8m0000gn/T//RtmpZPPHdq/downloaded_packages</code></pre>
 <pre class="r"><code>library(lmtest)
 library(MASS)
 library(sandwich)
@@ -323,7 +323,7 @@ MathAchSchool2%&gt;%ggplot()+geom_density(aes(logit,color=HIMINTY,fill=HIMINTY),
 <pre class="r"><code>install.packages(&#39;plotROC&#39;, repos = &quot;http://cran.us.r-project.org&quot;)</code></pre>
 <pre><code>## 
 ## The downloaded binary packages are in
-##  /var/folders/kg/pcq6cp814h7_bfd7x3jbhj8m0000gn/T//Rtmplxiy60/downloaded_packages</code></pre>
+##  /var/folders/kg/pcq6cp814h7_bfd7x3jbhj8m0000gn/T//RtmpZPPHdq/downloaded_packages</code></pre>
 <pre class="r"><code>library(plotROC) 
 ROCplot&lt;-ggplot(MathAchSchool2)+geom_roc(aes(d=HIMINTY,m=prob), n.cuts=0)+
 geom_segment(aes(x=0,xend=1,y=0,yend=1),lty=2)
@@ -392,7 +392,7 @@ summarize_all(diags,mean) </code></pre>
 install.packages(&#39;glmnet&#39;, repos = &quot;http://cran.us.r-project.org&quot;)</code></pre>
 <pre><code>## 
 ## The downloaded binary packages are in
-##  /var/folders/kg/pcq6cp814h7_bfd7x3jbhj8m0000gn/T//Rtmplxiy60/downloaded_packages</code></pre>
+##  /var/folders/kg/pcq6cp814h7_bfd7x3jbhj8m0000gn/T//RtmpZPPHdq/downloaded_packages</code></pre>
 <pre class="r"><code>library(glmnet)
 MathAchSchool2$HIMINTY = as.numeric(MathAchSchool2$HIMINTY) 
 y&lt;-as.matrix(MathAchSchool2$HIMINTY)
