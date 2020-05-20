@@ -7,6 +7,7 @@ categories: []
 tags: []
 description: ''
 ---
-MY FIRST EVER GIF PROJECT.
+MY FIRST EVER GIF PROJECT. 
+CLEARLY, THE MESSAGE IS DIFFICULT TO UNDERSTAND.
 
 ![](https://media.giphy.com/media/MasCt90qhwoLMP4jWO/giphy.gif)

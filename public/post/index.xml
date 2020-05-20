@@ -1,32 +1,23 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Chris Turner</title>
+    <title>Posts on Taimur Hassan</title>
     <link>/post/</link>
-    <description>Recent content in Posts on Chris Turner</description>
+    <description>Recent content in Posts on Taimur Hassan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Wed, 13 May 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 20 May 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Lklmklm</title>
-      <link>/2020/05/13/lklmklm/</link>
-      <pubDate>Wed, 13 May 2020 00:00:00 +0000</pubDate>
+      <title>Should whether you live depend on where you live? A Stance on Death Penalty.</title>
+      <link>/2020/05/20/should-whether-you-live-depend-on-where-you-live-a-stance-on-death-penalty/</link>
+      <pubDate>Wed, 20 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>/2020/05/13/lklmklm/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Taimurhh</title>
-      <link>/2020/05/13/taimurhh/</link>
-      <pubDate>Wed, 13 May 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/2020/05/13/taimurhh/</guid>
-      <description></description>
+      <guid>/2020/05/20/should-whether-you-live-depend-on-where-you-live-a-stance-on-death-penalty/</guid>
+      <description>Although most, if not all, American citizens deem equality, liberty and respect of life as fundamental aspects of any society, they seem not to be on the same page regarding the prospect of death penalty. Under the New Federalism which governs American politics, the federal system gives considerable power to the individual states over what policies to make and abide by. Although it may seem rudimentary to hark back on the era where a national standard is set for every policy, one may consider it necessary for the aspect of death penalty.</description>
     </item>
     
   </channel>
