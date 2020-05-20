@@ -1,5 +1,5 @@
 ---
-title: Should whether you live depend on where you live?
+title: The Case of Death Penalties - Should Whether You Live Depend on Where You Live?
 author: Taimur Hassan
 date: '2020-05-20'
 slug: should-whether-you-live-depend-on-where-you-live
