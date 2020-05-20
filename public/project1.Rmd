@@ -12,9 +12,9 @@ knitr::opts_chunk$set(echo = TRUE, eval = TRUE, fig.align = "center", warning = 
 tidy=TRUE, tidy.opts=list(width.cutoff=60), R.options=list(max.print=100))
 ```
 
-##INTRODUCTION
-#The two datasets chosen are MathAchieve and MathAchSchool. Both relate Achievement Scores in Mathematics to different variables which have been the focus of study for many articles in the modern world. MathAchieve contains the School number, status of being a Minority, Sex of the individual, Socioeconomic Status (SES), a numeric vector of mathematics achievement score (MathAch), and a numeric vector of the mean SES for the entire school. MathAchSchool contains the School number, Size of the school, Sector (whether the school is Public or Catholic), a numeric vector giving the percentage of students on the academic track/academic performance (PRACAD), a numeric vector measuring the discrimination climate (DISCLIM), a disciplinary factor with levels 0 and 1 (HIMINTY, not used in the Project below), and a numeric vector giving the mean SES scores (MEANSES). The individuals and schools were common to both datasets. They were acquired from the package ("nlme") from R itself. This is an interesting topic, esepcially considering my own background as a mathematics/sciences Tutor for many organizations. I aspire to find links between different variables and student performance. A negative correlation can be expected between academic performace (PRACAD) or Mathematics Achievement Scores (MathAch) and discrimination climate in school (DISCLIM). Similarly, a negative correlation can be found between PRACAD and SES, and PRACAD and MathAch. Being a minority can also be expected to lead to lower PRACAD and MathAch values. An addition of another variable called Average Achievement Score will be added as an indicator of the mean of all scores at a given school. 
-#It is important to note, especially in modern society, how being a minority affects students' performance in schools. This study can be further extrapolated to study the psychological effects behind and the idea of self-fulfilling prophecy.
+INTRODUCTION
+The two datasets chosen are MathAchieve and MathAchSchool. Both relate Achievement Scores in Mathematics to different variables which have been the focus of study for many articles in the modern world. MathAchieve contains the School number, status of being a Minority, Sex of the individual, Socioeconomic Status (SES), a numeric vector of mathematics achievement score (MathAch), and a numeric vector of the mean SES for the entire school. MathAchSchool contains the School number, Size of the school, Sector (whether the school is Public or Catholic), a numeric vector giving the percentage of students on the academic track/academic performance (PRACAD), a numeric vector measuring the discrimination climate (DISCLIM), a disciplinary factor with levels 0 and 1 (HIMINTY, not used in the Project below), and a numeric vector giving the mean SES scores (MEANSES). The individuals and schools were common to both datasets. They were acquired from the package ("nlme") from R itself. This is an interesting topic, esepcially considering my own background as a mathematics/sciences Tutor for many organizations. I aspire to find links between different variables and student performance. A negative correlation can be expected between academic performace (PRACAD) or Mathematics Achievement Scores (MathAch) and discrimination climate in school (DISCLIM). Similarly, a negative correlation can be found between PRACAD and SES, and PRACAD and MathAch. Being a minority can also be expected to lead to lower PRACAD and MathAch values. An addition of another variable called Average Achievement Score will be added as an indicator of the mean of all scores at a given school. 
+It is important to note, especially in modern society, how being a minority affects students' performance in schools. This study can be further extrapolated to study the psychological effects behind and the idea of self-fulfilling prophecy.
 
 
 ```{r}
@@ -49,7 +49,7 @@ joined_dat%>%group_by(School)%>%summarize(mean(MathAch))
 #Using mutate and group_by to create another variable AvgAch which will be useful later
 joined_dat2<- joined_dat%>%group_by(School)%>%mutate(AvgAch=mean(MathAch))
 ```
-#joined_dat2 is the primary dataset used in the entirety of the Project. It has the School variable followed by three useful categorical variables and 6 useful numerical variables (including AvgAch).
+joined_dat2 is the primary dataset used in the entirety of the Project. It has the School variable followed by three useful categorical variables and 6 useful numerical variables (including AvgAch).
 
 
 
@@ -151,24 +151,24 @@ ggplot(joined_dat2, aes(DISCLIM,PRACAD))+
   geom_point(aes(color=Minority), size=1)+
   ggtitle("Percentage of Students on Academic Track vs. Discrimination Climate")+theme_dark()
 ```
-#The graph of Students on Academic Track vs. Discrimination Climate superimposed with the variable of Minority explains primarily that as the discriminatory climate increases the percentage of students on academic track decreases. While a superficial glance might suggest that being a minority in the situation would not really affect the academic progress, it can be seen that in a high discriminatory climate, there are some students who are not minority and have a higher chance of being on the academic track (not following the trend; they are outliers).
+The graph of Students on Academic Track vs. Discrimination Climate superimposed with the variable of Minority explains primarily that as the discriminatory climate increases the percentage of students on academic track decreases. While a superficial glance might suggest that being a minority in the situation would not really affect the academic progress, it can be seen that in a high discriminatory climate, there are some students who are not minority and have a higher chance of being on the academic track (not following the trend; they are outliers).
 ```{r}
 joined_dat2%>%select(-School, Sector, DISCLIM, AvgAch)%>%ggplot( aes(x = DISCLIM, y = AvgAch, color = Sector)) +
 geom_point(size=1) + geom_line() +
 theme_minimal() + ggtitle("Discrimination Climate vs. Average Achievement Scores in Each School (Public
                           or Catholic)")
 ```
-#The graph of Discrimination Climate vs. Average Academic Achievement in each school in regards to Sector (Public or Catholic) insinuates an important realization: while it is no surprise that Average academic progress is bound to decrease in a discrimatory climate, it seems that Public Schools have a higher discriminatory climate than Catholic Schools. The orange line (Public) is far right to the blue line (Catholic). Overall, Catholic Schools report higher Average Academic Achievement/Progress than their Public counterparts.
+The graph of Discrimination Climate vs. Average Academic Achievement in each school in regards to Sector (Public or Catholic) insinuates an important realization: while it is no surprise that Average academic progress is bound to decrease in a discrimatory climate, it seems that Public Schools have a higher discriminatory climate than Catholic Schools. The orange line (Public) is far right to the blue line (Catholic). Overall, Catholic Schools report higher Average Academic Achievement/Progress than their Public counterparts.
 ```{r}
 joined_dat2%>%ggplot(aes(x=Sector,y=DISCLIM))+geom_jitter(alpha=0.20, aes(color=Size))+geom_boxplot() + ggtitle("The Discrimination Climate vs. Public and Catholic Schools in Perspective of Sizes")
 ```
-#This graph of the Discrimination Climate vs. Public and Catholic Schools in Perspective of Sizes depicts more clearly that Catholic Schools have a much lower discriminatory climate than Public Schools. In fact, there are no Catholic Schools with a Discrimatory Climate value of more than 1. Public Schools with the minimum Discrimination Climate have a similar climate to that of the median of Catholic Schools. Size is also another important factor to play. There are larger sized schools in Public Sector as compared to the Catholic Sector (more light blue dots in Public). It also seems that as the size increases (the lightness of the dot increases), the discrimination climate also increases. This is especially true and vividly clear for Public Schools. 
+This graph of the Discrimination Climate vs. Public and Catholic Schools in Perspective of Sizes depicts more clearly that Catholic Schools have a much lower discriminatory climate than Public Schools. In fact, there are no Catholic Schools with a Discrimatory Climate value of more than 1. Public Schools with the minimum Discrimination Climate have a similar climate to that of the median of Catholic Schools. Size is also another important factor to play. There are larger sized schools in Public Sector as compared to the Catholic Sector (more light blue dots in Public). It also seems that as the size increases (the lightness of the dot increases), the discrimination climate also increases. This is especially true and vividly clear for Public Schools. 
 ```{r}
 ggplot(joined_dat2, aes(x = Minority, y = SES, fill=Sector))+
 geom_bar(stat="summary",fun.y="mean", position="dodge")+
 geom_errorbar(stat="summary",position="dodge") + ylab("Average SES") +ggtitle("The Status of Minority vs. Socioeconomic status in Public and Catholic Schools") + scale_y_continuous( breaks=c(-0.8,-0.7,-0.6,-0.5,-0.4,-0.3,-0.2,-0.1,0,0.1,0.2,0.3, 0.4, 0.5))
 ```
-#This graph of the Status of Minority vs. Socioeconomic status in Public and Catholic Schools reveals prominently that minorities have lower socioeconomic statuses. Minorities in Public Schools have by far the lowest SES. Public Schools have generally students of lower SES and Catholic Schools have a predominance of students of higher SES. 
+This graph of the Status of Minority vs. Socioeconomic status in Public and Catholic Schools reveals prominently that minorities have lower socioeconomic statuses. Minorities in Public Schools have by far the lowest SES. Public Schools have generally students of lower SES and Catholic Schools have a predominance of students of higher SES. 
 ```
 
 ```{r}
@@ -189,7 +189,7 @@ joined_dat2[pam2$id.med,]
 
 ggplot(final, aes(x=PRACAD,y=DISCLIM, color=SES))+geom_point() +ggtitle("The Discrimination Climate vs. Academic Performance in Perspective of SES")
 ```
-#By using PAM clustering, it was aimed to create three clusters. Despite trying with a variable number, all the graphs suggest that cluster formation cannot occur, perhaps, because of the highely different density spread of data points across the data space. There is a very slight possibility that the data follows non-convex shapes. I tried with different techniques (including K-means) but in vain. PAM clustering gives somewhat the best results, despite the lack of particular clusters. The clusters are spread all over. (I even tried with joined_dat, excluded the School variable, and aimed to create clusters but the data did not create clusters.)
+By using PAM clustering, it was aimed to create three clusters. Despite trying with a variable number, all the graphs suggest that cluster formation cannot occur, perhaps, because of the highely different density spread of data points across the data space. There is a very slight possibility that the data follows non-convex shapes. I tried with different techniques (including K-means) but in vain. PAM clustering gives somewhat the best results, despite the lack of particular clusters. The clusters are spread all over. (I even tried with joined_dat, excluded the School variable, and aimed to create clusters but the data did not create clusters.)
 
 
 ```{r}
@@ -201,7 +201,7 @@ final%>%plot_ly(x= ~PRACAD, y = ~DISCLIM, z = ~AvgAch, color= ~cluster,type = "s
 pam2$silinfo$avg.width
 plot(pam2, which=2)
 ```
-#This 3D plot (unable to see in pdf/html but can be seen through .Rmd file) was made to show an accurate cluster depiction between Percent of Academic Performace compared to Discrimination Climate and Average Achievement Scores. Again, the clusters seem to intermingle with each other and do not clearly separate as evident by the low Average Silhouette Width of 0.519. This indicates that a reasonable structure has been found but it is not strong enough. It easily could be said to be of weak structure as it is right on the border between weak and reasonable structure. Yet, it can be viewed through the 3D plot that Average Academic Scores decrease with increasing Discriminatory Climate, and Percentage of Students on the Academic track (symbolizing Academic Success) decrease with increasing Discriminatory Climate. 
+This 3D plot (unable to see in pdf/html but can be seen through .Rmd file) was made to show an accurate cluster depiction between Percent of Academic Performace compared to Discrimination Climate and Average Achievement Scores. Again, the clusters seem to intermingle with each other and do not clearly separate as evident by the low Average Silhouette Width of 0.519. This indicates that a reasonable structure has been found but it is not strong enough. It easily could be said to be of weak structure as it is right on the border between weak and reasonable structure. Yet, it can be viewed through the 3D plot that Average Academic Scores decrease with increasing Discriminatory Climate, and Percentage of Students on the Academic track (symbolizing Academic Success) decrease with increasing Discriminatory Climate. 
 
 
 ```{R}
