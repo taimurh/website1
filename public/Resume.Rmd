@@ -8,9 +8,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 EDUCATION
 
-•	2013	Completed University of Cambridge, GCE Ordinary Levels, with 7 A*’s and 3 A’s (High School)
-
-•	2015	Completed University of Cambridge, GCE Advanced Levels, with 4 A*’s and 1 B (High School)
+•	2015	Completed University of Cambridge, GCE Ordinary and Advanced Levels (High School)
 
 •	2017-	Enrolled in the University of Texas at Austin, Austin, TX – Bachelor of Science in Biology (Pre-Med)				Anticipated Graduation Date: Spring 2020		Concentration in Biology; Cumulative GPA = 3.85 (as of current)
 

@@ -36,7 +36,7 @@
       
       <guid>/blog/python/</guid>
       <description>In bioinformatics, k-mers refer to all the possible subsequences (of length k) from a read obtained through DNA sequencing. For example, if the DNA sequencing read is “ATCATCATG”, then a the 3-mers in that read include “ATC” (which occurs twice), “TCA” (which occurs twice), “CAT” (occurs twice), and “ATG” (occurs once). You can read more about k-mers on Wikipedia.
-Write a function that takes a string of nucleotides as input and returns a dictionary with all 3-mers present in that string, and the number of times that each 3-mer occurs.</description>
+Here is a function that takes a string of nucleotides as input and returns a dictionary with all 3-mers present in that string, and the number of times that each 3-mer occurs.</description>
     </item>
     
     <item>
@@ -76,9 +76,11 @@ Write a function that takes a string of nucleotides as input and returns a dicti
       
       <guid>/resume/</guid>
       <description>EDUCATION
-• 2013 Completed University of Cambridge, GCE Ordinary Levels, with 7 A*’s and 3 A’s (High School)
-• 2015 Completed University of Cambridge, GCE Advanced Levels, with 4 A*’s and 1 B (High School)
-• 2017- Enrolled in the University of Texas at Austin, Austin, TX – Bachelor of Science in Biology (Pre-Med) Anticipated Graduation Date: Spring 2020 Concentration in Biology; Cumulative GPA = 3.85 (as of current)</description>
+• 2015 Completed University of Cambridge, GCE Ordinary and Advanced Levels (High School)
+• 2017- Enrolled in the University of Texas at Austin, Austin, TX – Bachelor of Science in Biology (Pre-Med) Anticipated Graduation Date: Spring 2020 Concentration in Biology; Cumulative GPA = 3.85 (as of current)
+• 2019 MCAT score of 509
+EXTRACURRICULAR AND VOLUNTEER HISTORY (STARTING COLLEGE)
+• Volunteered at a Robotics Camp at San Jacinto College in November, 2016 - responsible for maintaining robots, learning JavaScript and introduction to coding (including R and Python), confirming that every robot was taken care of properly, ensuring proper robot working order</description>
     </item>
     
   </channel>
