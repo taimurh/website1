@@ -20,7 +20,6 @@ theme = "hugo-sustain"
   custom_js  = []
 
 [params.social]
-  Github        = "taimurh"
   LinkedIn      = "www.linkedin.com/in/taimur-hassan-632447184"
   Email         = "taimurhassan@utexas.edu"
   Twitter       = "TaimurH07661202"
