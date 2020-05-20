@@ -6,5 +6,5 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
-- [Project 1](/project1)
-- [Project 2](/project2)
+- [Exploratory Data Analysis with Tidyverse Tools](/project1)
+- [Modeling, Testing, and Classification](/project2)
