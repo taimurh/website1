@@ -9,5 +9,4 @@ description: ''
 ---
 MY FIRST EVER GIF PROJECT.
 
-![](https://giphy.com/gifs/MasCt90qhwoLMP4jWO/html5)
-https://giphy.com/gifs/MasCt90qhwoLMP4jWO/html5
+![](https://media.giphy.com/media/MasCt90qhwoLMP4jWO/giphy.gif)
