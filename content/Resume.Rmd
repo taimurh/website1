@@ -6,6 +6,7 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+***This is subject to edit and changes
 EDUCATION
 
 •	2015	Completed University of Cambridge, GCE Ordinary and Advanced Levels (High School)
